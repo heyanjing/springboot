@@ -1,0 +1,18 @@
+#支持两种文件格式 application.properties   application.yml
+server:
+  port: 8909
+  context-path: /boot
+
+proVal1: true
+proVal2: BBBB
+proVal3: 120
+proVal4: "${proVal1} ${proVal2} ${proVal3}"
+
+person:
+  name: heyanjing
+  age: 27
+
+env: 开发环境
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
