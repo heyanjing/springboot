@@ -26,7 +26,7 @@ public class HelloController {
     private Person person;
 
     @RequestMapping(value = {"/", ""}, method = RequestMethod.GET)
-    public String index() {
+    public String index()throws  Exception {
         System.out.println(proVal1);
         System.out.println(proVal2);
         System.out.println(proVal3);
@@ -35,8 +35,8 @@ public class HelloController {
         System.out.println(person.getAge());
         System.out.println(person.getName());
 
-        System.out.println(env);
-        return "hellxxxo";
+        System.err.println(env );
+        return "我操"+env;
     }
     //@RequestMapping(value = "/say/{word}", method = RequestMethod.GET)
     @GetMapping("/say/{word}")
