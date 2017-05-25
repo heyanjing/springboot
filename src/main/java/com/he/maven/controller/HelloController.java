@@ -36,7 +36,7 @@ public class HelloController {
         System.out.println(person.getName());
 
         System.err.println(env );
-        return "我操"+env;
+        return "我操xx00xxxx"+env;
     }
     //@RequestMapping(value = "/say/{word}", method = RequestMethod.GET)
     @GetMapping("/say/{word}")

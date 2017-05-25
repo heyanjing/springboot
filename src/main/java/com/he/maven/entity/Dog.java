@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import java.io.Serializable;
 
 /**
  * Created by heyanjing on 2017/5/22 17:06.
@@ -16,12 +18,13 @@ import javax.persistence.Table;
 @Table(name = "dog")
 @DynamicUpdate(true)
 @DynamicInsert(true)
-public class Dog {
+public class Dog implements Serializable{
     @Id
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "org.hibernate.id.UUIDGenerator")
     private String id;
     private String name;
+    @Min(value = 0,message = "年龄必须大于0")
     private Integer age;
 
     public Dog() {

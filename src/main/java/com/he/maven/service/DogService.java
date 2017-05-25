@@ -6,7 +6,6 @@ import com.he.maven.entity.Dog;
 import com.he.maven.enums.ExEnum;
 import com.he.maven.exception.Ex1;
 import com.he.maven.exception.Ex2;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -16,12 +15,23 @@ import java.util.List;
 
 /**
  * Created by heyanjing on 2017/5/23 11:48.
+ * 最佳实践为下面这种方式
+ * private final DogDao dogDao;
+ *
+ * public DogService(DogDao dogDao) {
+ *  this.dogDao = dogDao;
+ * }
  */
 @Service
 public class DogService {
 
-    @Autowired
-    private DogDao dogDao;
+
+    private final  DogDao dogDao;
+
+    public DogService(DogDao dogDao) {
+        this.dogDao = dogDao;
+    }
+
     Integer i = 0;
 
     @Transactional
@@ -40,7 +50,7 @@ public class DogService {
         }
 
         if (dog == null) {
-            dog= new Dog("name" + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS")), 12);
+            dog = new Dog("name" + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS")), 12);
         }
         Dog save = dogDao.save(dog);
         System.err.println(JSON.toJSONString(save));

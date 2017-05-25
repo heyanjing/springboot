@@ -4,3 +4,6 @@ com.he.maven.exception-----自定义异常
 com.he.maven.enums.ExEnum------异常的枚举统一管理
 com.he.maven.bean.Result--------异常的统一返回格式
 com.he.maven.bean.ResultUtil-------Result的工具类
+com.he.maven.config.DruidConfiguration----------druid连接池配置
+com.he.maven.config.ShiroConfiguration----------shiro配置
+com.he.maven.shiro------------------------------shiro相关类
