@@ -3,7 +3,6 @@ package com.he.maven.controller;
 import com.alibaba.fastjson.JSON;
 import com.he.maven.bean.Result;
 import com.he.maven.bean.ResultUtil;
-import com.he.maven.shiro.ShiroRealm;
 import com.he.maven.shiro.util.Shiros;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.LockedAccountException;
@@ -22,11 +21,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
     private static final Logger log = LoggerFactory.getLogger(UserController.class);
 
-    ShiroRealm shiroRealm;
-
-    public UserController(ShiroRealm shiroRealm) {
-        this.shiroRealm = shiroRealm;
-    }
 
     @RequestMapping("/login")
     public Result login(String userName, String password) {

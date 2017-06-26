@@ -60,4 +60,9 @@ public class DogService {
     public List<Dog> findAll() {
         return this.dogDao.findAll();
     }
+
+    @Transactional
+    public List<Dog> findByName(String name) {
+        return this.dogDao.findByName(name);
+    }
 }

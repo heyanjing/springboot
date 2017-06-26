@@ -26,8 +26,8 @@
 		diskPersistent="true"
 		statistics="true">
 	</cache>
-	
-	
+
+
 	<!-- 验证码缓存 3分钟有效-->
 	<cache name="mobileCodeCache"
 		maxEntriesLocalHeap="2000"
@@ -36,6 +36,32 @@
 		overflowToDisk="true"
 		statistics="true">
 	</cache>
-	
+
+    <cache name="city"
+           maxEntriesLocalHeap="2000"
+           eternal="false"
+           timeToLiveSeconds="10"
+           overflowToDisk="true"
+           diskPersistent="true"
+           statistics="true">
+    </cache>
+
+    <cache name="user"
+           maxEntriesLocalHeap="2000"
+           eternal="false"
+           timeToLiveSeconds="10"
+           overflowToDisk="true"
+           diskPersistent="true"
+           statistics="true">
+    </cache>
+    <cache name="testCache"
+           maxEntriesLocalHeap="2000"
+           eternal="false"
+           timeToLiveSeconds="10"
+           overflowToDisk="true"
+           diskPersistent="true"
+           statistics="true">
+    </cache>
+
 
 </ehcache>

@@ -36,4 +36,10 @@ public class DogController {
     public Result<List<Dog>> findAll() {
         return new Result<>(1, "成功", dogService.findAll());
     }
+
+    @RequestMapping("/findByName")
+    public Result<List<Dog>> findByName() {
+        dogService.findByName("name2017-05-23 15:03:28.568");
+        return new Result<>(1, "成功", dogService.findByName("name2017-05-23 15:03:28.568"));
+    }
 }

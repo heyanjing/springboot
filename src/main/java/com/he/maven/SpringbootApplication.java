@@ -10,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @ComponentScan
  */
 @SpringBootApplication
+//@EnableCaching//开启sql缓存
 public class SpringbootApplication {
 
     public static void main(String[] args) {
